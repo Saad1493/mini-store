@@ -1,0 +1,27 @@
+﻿@foreach (var  prod in ViewBag.FilteredProducts)
+{
+    <div class="col-lg-4 col-md-6">
+        <div class="card shadow-sm h-100 product-card">
+            <img src="/Images/@prod.Image"
+                 class="card-img-top p-4"
+                 style="height:220px; object-fit:contain;"
+                 alt="@prod.Name" />
+
+            <div class="card-body text-center">
+                <h4 class="card-title fw-bold">
+                    @prod.Name
+                </h4>
+
+                <h5 class="text-success mb-4">
+                    @prod.Price ريال
+                </h5>
+
+                <a asp-action="Details"
+                   asp-route-name="@prod.Name"
+                   class="btn btn-primary rounded-pill px-4">
+                    عرض التفاصيل
+                </a>
+            </div>
+        </div>
+    </div>
+}
